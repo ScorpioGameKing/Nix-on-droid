@@ -41,6 +41,9 @@
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
       ff = "clear && fastfetch";
     };
+    initExtra = ''
+      ff
+    '';
   };
 
   # Zoxide settings
