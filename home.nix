@@ -56,6 +56,11 @@
   programs.yazi = {
     enable = true;
     enableBashIntegration = true; # Adds drop into support through ya alias
+    settings = {
+     mgr = {
+       show_hidden = true;
+     };
+    };
   };
 
   # -------------------------------
