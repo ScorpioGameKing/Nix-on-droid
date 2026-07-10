@@ -16,11 +16,11 @@
 
   # User Packages
   home.packages = [
-    pkgs.fastfetch
-    pkgs.neovim
-    pkgs.yazi
-    pkgs.lazygit
-    pkgs.gh
+    pkgs.fastfetch # Pretty System Post
+    pkgs.neovim    # Better Text Editor
+    pkgs.yazi      # Terminal File Browser
+    pkgs.lazygit   # Git Repo Management
+    pkgs.gh        # Github CLI 
   ];
 
   # Home Manager Settings

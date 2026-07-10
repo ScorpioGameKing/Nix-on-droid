@@ -14,18 +14,18 @@
 {
   # Install System Packages
   environment.packages = with pkgs; [
-    git
-    killall
-    hostname
-    man
-    bzip2
-    gzip
-    xz
-    zip
-    unzip
-    fzf
-    zoxide
-    eza
+    git      # Version Control
+    killall  # Kill Processes
+    hostname # Set/Change Host/Domain/etc
+    man      # Read Man Pages
+    bzip2    # Compression Tool
+    gzip     # Compression Tool
+    xz       # Compression Tool
+    zip      # Compression Tool
+    unzip    # Compression Tool
+    fzf      # Command Line Fuzzy Finder
+    zoxide   # Better CD
+    eza      # Better LS
   ];
 
   # Nix Settings
