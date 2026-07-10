@@ -39,9 +39,21 @@
     enableBashIntegration = true; # Adds drop into support through ya alias
   };
 
+  # -------------------------------
   # Handwritten scripts and Configs
+  # -------------------------------
+
+  # Quick Switch Script
   home.file."nix-switch.sh".text = ''
     #!/usr/bin/env bash
+    nix-on-droid switch --flake ~/.config/nix-on-droid/
+  '';
+
+  # Clean and Switch Script
+  home.file."nix-switch.sh".text = ''
+    #!/usr/bin/env bash
+    unlink .bashrc
+    nix-garbage-collect -d
     nix-on-droid switch --flake ~/.config/nix-on-droid/
   '';
 }
