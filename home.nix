@@ -39,7 +39,7 @@
       ".." = "cd ..";
       grep = "grep --color=auto";
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
-      ff = "clear $$ fastfetch";
+      ff = "clear && fastfetch";
     };
   };
 
