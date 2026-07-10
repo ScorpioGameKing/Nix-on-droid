@@ -36,7 +36,7 @@
   #Yazi Settings
   programs.yazi = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = true; # Adds drop into support through ya alias
   };
 
   # Handwritten scripts and Configs
