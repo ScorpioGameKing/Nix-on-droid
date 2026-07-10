@@ -15,6 +15,7 @@
   # Install System Packages
   environment.packages = with pkgs; [
     git      # Version Control
+    ncurses  # Get Clear back
     killall  # Kill Processes
     hostname # Set/Change Host/Domain/etc
     man      # Read Man Pages

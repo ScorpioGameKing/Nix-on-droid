@@ -23,6 +23,10 @@
     pkgs.gh        # Github CLI 
   ];
 
+  # ---------------------------
+  # User Package Configurations
+  # ---------------------------
+
   # Home Manager Settings
   programs.home-manager = {
     enable = true;
@@ -39,6 +43,7 @@
     };
   };
 
+  # Zoxide settings
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
@@ -64,7 +69,7 @@
   home.file."nix-clean-switch.sh".text = ''
     #!/usr/bin/env bash
     unlink .bashrc
-    nix-garbage-collect -d
+    nix-collect-garbage -d
     nix-on-droid switch --flake ~/.config/nix-on-droid/
   '';
 }
