@@ -31,7 +31,7 @@
   # Bash Settings
   programs.bash = {
     enable = true;
-    bashrcExtra = ''
+    initExtra = ''
       function y() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
         command yazi "$@" --cwd-file="$tmp"
