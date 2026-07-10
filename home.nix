@@ -50,7 +50,7 @@
   '';
 
   # Clean and Switch Script
-  home.file."nix-switch.sh".text = ''
+  home.file."nix-clean-switch.sh".text = ''
     #!/usr/bin/env bash
     unlink .bashrc
     nix-garbage-collect -d
