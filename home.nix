@@ -58,9 +58,7 @@
     enableBashIntegration = true; # Adds drop into support through ya alias
     settings = {
       yazi = {
-        mgr = {
           show_hidden = true;
-        };
       };
     };
   };
