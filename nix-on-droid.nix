@@ -27,6 +27,7 @@
     fzf      # Command Line Fuzzy Finder
     zoxide   # Better CD
     eza      # Better LS
+    ripgrep  # Grep go BRRRR
   ];
 
   # Nix Settings

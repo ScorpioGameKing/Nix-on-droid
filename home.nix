@@ -10,6 +10,16 @@
 
 {config, lib, pkgs, ... }:
 
+# Fetch any external packages
+let 
+  yazi-flavors = pkgs.fetchFromGitHub {
+      owner = "kalidyasin";
+      repo = "yazi-flavors";
+      rev = "main";
+      sha256 = "0gcmjpvnpygpw2hjplvwlfrql1lgr2kr9v5bhclqp5i9sppsycfl";
+  };
+in
+
 {
   # Read the changelog before changing this value
   home.stateVersion = "24.05";
@@ -74,6 +84,14 @@
             }
         ];
       };
+    };
+    theme = {
+      flavor = {
+        dark = "tokyonight-night";
+      };
+    };
+    flavors = {
+      tokyonight-night = "${yazi-flavors}/tokyonight-night.yazi";
     };
   };
   
