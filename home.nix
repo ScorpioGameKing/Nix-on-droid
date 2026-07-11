@@ -90,9 +90,6 @@ in
         dark = "tokyonight-night";
       };
     };
-    flavors = {
-      tokyonight-night = "${y-flavors}/tokyonight-night.yazi";
-    };
   };
   
   # Zoxide settings
