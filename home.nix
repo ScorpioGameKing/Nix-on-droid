@@ -70,14 +70,14 @@
           linemode = "size";
       };
       preview = {
-        wrap = "yes"
+        wrap = "yes";
       };
       opener = {
         edit = [
-          { 
+          {
             run = 'nvim "$@"'
             block = true
-            for = "unix" 
+            for = "unix"
           };
         ];
       };
