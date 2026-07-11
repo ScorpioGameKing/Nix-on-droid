@@ -56,7 +56,6 @@
   programs.yazi = {
     enable = true;
     enableBashIntegration = true; # Adds drop into support through ya alias
-    # The file is made, just isn't being used because ???
     settings = {
       manager = {
           show_hidden = true;
