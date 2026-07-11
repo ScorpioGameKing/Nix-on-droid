@@ -56,9 +56,22 @@
   programs.yazi = {
     enable = true;
     enableBashIntegration = true; # Adds drop into support through ya alias
+    # The file is made, just isn't being used because ???
     settings = {
-      mgr = {
+      manager = {
           show_hidden = true;
+          ratio = [1, 4, 3];
+          sort_by = "alphabetical";
+          sort_dir_first = true;
+          linemode = "size";
+      };
+      preview = {
+        wrap = "yes"
+      };
+      opener = {
+        edit = [
+          { run = 'nvim "$@"', block = true, for = "unix" };
+        ];
       };
     };
   };
