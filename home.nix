@@ -43,14 +43,7 @@
     };
     initExtra = ''
       ff
-      eval "$(zoxide init bash)"
     '';
-  };
-
-  # Zoxide settings
-  programs.zoxide = {
-    enable = true;
-    enableBashIntegration = true;
   };
 
   #Yazi Settings
@@ -83,7 +76,13 @@
       };
     };
   };
-
+  
+  # Zoxide settings
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+  
   # -------------------------------
   # Handwritten scripts and Configs
   # -------------------------------
