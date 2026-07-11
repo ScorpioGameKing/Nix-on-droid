@@ -60,7 +60,11 @@
     settings = {
       manager = {
           show_hidden = true;
-          ratio = [1, 4, 3];
+          ratio = [
+            1
+            4
+            3
+          ];
           sort_by = "alphabetical";
           sort_dir_first = true;
           linemode = "size";
@@ -70,7 +74,11 @@
       };
       opener = {
         edit = [
-          { run = 'nvim "$@"', block = true, for = "unix" };
+          { 
+            run = 'nvim "$@"'
+            block = true
+            for = "unix" 
+          };
         ];
       };
     };
