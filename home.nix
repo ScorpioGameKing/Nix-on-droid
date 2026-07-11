@@ -43,6 +43,7 @@
     };
     initExtra = ''
       ff
+      eval "$(zoxide init bash)"
     '';
   };
 
