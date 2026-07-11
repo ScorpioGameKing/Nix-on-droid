@@ -74,11 +74,9 @@
       };
       opener = {
         edit = [
-          {
-            run = 'nvim "$@"'
+            run = "nvim '$@'"
             block = true
             for = "unix"
-          };
         ];
       };
     };
