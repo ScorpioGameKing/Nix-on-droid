@@ -41,8 +41,8 @@
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
       ff = "clear && fastfetch";
       vi = "nvim";
-      nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/
-";
+      nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      nodswc = "unlink .bashrc && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
     };
     initExtra = ''
       ff
@@ -102,7 +102,8 @@
   # -------------------------------
   # Handwritten scripts and Configs
   # -------------------------------
-
+  
+  /*
   # Quick Switch Script
   home.file."nix-switch.sh".text = ''
     #!/usr/bin/env bash
@@ -116,4 +117,5 @@
     nix-collect-garbage -d
     nix-on-droid switch --flake ~/.config/nix-on-droid/
   '';
+  */
 }
