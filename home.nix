@@ -10,16 +10,6 @@
 
 {config, lib, pkgs, ... }:
 
-# Fetch any external packages
-let 
-  y-flavors = pkgs.fetchFromGitHub {
-      owner = "kalidyasin";
-      repo = "yazi-flavors";
-      rev = "main";
-      sha256 = "0gcmjpvnpygpw2hjplvwlfrql1lgr2kr9v5bhclqp5i9sppsycfl";
-  };
-in
-
 {
   # Read the changelog before changing this value
   home.stateVersion = "24.05";
@@ -51,13 +41,28 @@ in
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
       ff = "clear && fastfetch";
       vi = "nvim";
+      nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/
+";
     };
     initExtra = ''
       ff
     '';
   };
 
-  #Yazi Settings
+  /*
+  # For some reason nix-on-droid's
+  # home-manager instance can't find
+  # fastfetch. Feels similar to the
+  # Yazi flavor issues and is just a
+  # nix-on-droid issue.
+
+  # Fastfetch Settings
+  programs.fastfetch = {
+    enable = true;
+  };
+  */
+
+  # Yazi Settings
   programs.yazi = {
     enable = true;
     enableBashIntegration = true; # Adds drop into support through ya alias
