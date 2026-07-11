@@ -12,7 +12,7 @@
 
 # Fetch any external packages
 let 
-  yazi-flavors = pkgs.fetchFromGitHub {
+  y-flavors = pkgs.fetchFromGitHub {
       owner = "kalidyasin";
       repo = "yazi-flavors";
       rev = "main";
@@ -91,7 +91,7 @@ in
       };
     };
     flavors = {
-      tokyonight-night = "${yazi-flavors}/tokyonight-night.yazi";
+      tokyonight-night = "${y-flavors}/tokyonight-night.yazi";
     };
   };
   
