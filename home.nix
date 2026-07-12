@@ -50,6 +50,7 @@
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
       ff = "clear && fastfetch";
       vi = "nvim";
+      lzg = "lazygit";
       nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/";
       nodswc = "unlink ~/.bashrc && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
       nodrl = "nix-on-droid rollback";
