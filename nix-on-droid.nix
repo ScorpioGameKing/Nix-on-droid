@@ -28,7 +28,7 @@
     zoxide   # Better CD
     eza      # Better LS
     ripgrep  # Grep go BRRRR
-    nerd-fonts.agave
+    nerdfonts
   ];
 
   # Nix Settings
@@ -47,7 +47,7 @@
     foreground = "#ebdbb2";
     cursor = "#fabd2f";
   };
-  #terminal.font = "${pkgs.nerd-fonts.agave}/share/fonts/";
+  terminal.font = "${pkgs.nerdfonts}/share/fonts/truetype/AgaveNerdFontMono.ttf";
 
   # Enable Home Manager Configuration
   home-manager = {
