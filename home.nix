@@ -42,7 +42,7 @@
       ff = "clear && fastfetch";
       vi = "nvim";
       nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/";
-      nodswc = "unlink .bashrc && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      nodswc = "unlink ~/.bashrc && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
     };
     initExtra = ''
       ff
