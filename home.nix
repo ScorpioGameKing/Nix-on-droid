@@ -60,7 +60,7 @@
     '';
   };
 
-  /*
+  
   # For some reason nix-on-droid's
   # home-manager instance can't find
   # fastfetch. Feels similar to the
@@ -71,7 +71,7 @@
   programs.fastfetch = {
     enable = true;
   };
-  */
+  
 
   # Yazi Settings
   programs.yazi = {
