@@ -10,6 +10,16 @@
 
 {config, lib, pkgs, ... }:
 
+# Grab Dotfiles
+let
+  scorpio-gruvy-dotfiles = fetchFromGithub {
+    owner = "scorpiogk";
+    repo = "https://github.com/ScorpioGameKing/Scorpio-Gruv-dotfiles";
+    rev = "master";
+    sha256 = "1nrpj6k1a39hrhnzyhkd0wxmi1j9qlwn0bz2g6rlzk35pqgx0nmn";
+  };
+in
+
 {
   # Read the changelog before changing this value
   home.stateVersion = "24.05";
@@ -65,13 +75,13 @@
   # home-manager instance can't find
   # fastfetch. Feels similar to the
   # Yazi flavor issues and is just a
-  # nix-on-droid issue.
+  # nix-on-droid issue. From searches
+  # it appears fastfetch's declarative
+  # config was added 24.11, this is 
+  # 24.05. Instead copy the source from
+  # existing dotfile repo.
 
   # Fastfetch Settings
-  programs.fastfetch = {
-    enable = true;
-  };
-  
 
   # Yazi Settings
   programs.yazi = {
@@ -105,6 +115,7 @@
   };
   
   # Zoxide settings
+  # Currently seems to not be working
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
