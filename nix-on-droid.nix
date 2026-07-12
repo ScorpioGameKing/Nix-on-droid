@@ -35,6 +35,13 @@ in
     zoxide   # Better CD
     eza      # Better LS
     ripgrep  # Grep go BRRRR
+    openssh  # Connect me
+    (pkgs.writeScriptBin "sshd-start" ''
+      #!${pkgs.runtimeShell}
+
+      echo "Starting sshd in non-daemonized way on port ${toString port}"
+      ${pkgs.openssh}/bin/sshd -f "${sshdDirectory}/sshd_config" -D
+    '')
   ];
 
   # Nix Settings
@@ -60,14 +67,6 @@ in
       $DRY_RUN_CMD mv $VERBOSE_ARG "${sshdTmpDirectory}" "${sshdDirectory}"
     fi
   '';
-  environment.packages = [
-    (pkgs.writeScriptBin "sshd-start" ''
-      #!${pkgs.runtimeShell}
-
-      echo "Starting sshd in non-daemonized way on port ${toString port}"
-      ${pkgs.openssh}/bin/sshd -f "${sshdDirectory}/sshd_config" -D
-    '')
-  ];
   # Enable Home Manager Configuration
   home-manager = {
     backupFileExtension = "hm-bak";
