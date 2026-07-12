@@ -28,6 +28,7 @@
     zoxide   # Better CD
     eza      # Better LS
     ripgrep  # Grep go BRRRR
+    nerd-fonts.agave
   ];
 
   # Nix Settings
@@ -38,7 +39,15 @@
   '';
 
   android-integration.termux-open.enable = true;
-  android-integration.termux-open-url.enable = true;
+  android-integration.termux-reload-settings.enable = true;
+  android-integration.xdg-open.enable = true;
+  
+  terminal.colors = {
+    background = "#282828";
+    foreground = "#ebdbb2";
+    cursor = "#fabd2f";
+  };
+  #terminal.font = "${pkgs.nerd-fonts.agave}/share/fonts/";
 
   # Enable Home Manager Configuration
   home-manager = {
