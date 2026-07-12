@@ -47,7 +47,7 @@
     foreground = "#ebdbb2";
     cursor = "#fabd2f";
   };
-  terminal.font = "${pkgs.nerdfonts}/share/fonts/truetype/AgaveNerdFontMono.ttf";
+  terminal.font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/AgaveNerdFontMono-Regular.ttf";
 
   # Enable Home Manager Configuration
   home-manager = {
