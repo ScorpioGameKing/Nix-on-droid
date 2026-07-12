@@ -37,6 +37,9 @@
     experimental-features = nix-command flakes
   '';
 
+  android-integration.termux-open.enable = true;
+  android-integration.termux-open-url.enable = true;
+
   # Enable Home Manager Configuration
   home-manager = {
     backupFileExtension = "hm-bak";
