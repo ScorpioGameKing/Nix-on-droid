@@ -12,7 +12,7 @@
 
 # Grab Dotfiles
 let
-  scorpio-gruvy-dotfiles = fetchFromGithub {
+  scorpio-gruvy-dotfiles = fetchFromGitHub {
     owner = "scorpiogk";
     repo = "https://github.com/ScorpioGameKing/Scorpio-Gruv-dotfiles";
     rev = "master";
