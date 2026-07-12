@@ -13,10 +13,10 @@
 # Grab Dotfiles
 let
   scorpio-gruvy-dotfiles = pkgs.fetchFromGitHub {
-    owner = "ScorpioGK";
+    owner = "ScorpioGameKing";
     repo = "Scorpio-Gruv-dotfiles";
     rev = "master";
-    sha256 = "1nrpj6k1a39hrhnzyhkd0wxmi1j9qlwn0bz2g6rlzk35pqgx0nmn";
+    sha256 = "sha256-HUkC4NHWDYueXURzi3aJ62FEolqw6O3abweZZAR2Rls=";
   };
 in
 
@@ -39,7 +39,8 @@ in
       font_dst = "${config.home.homeDirectory}/.termux/font.ttf";
       in lib.hm.dag.entryAfter ["writeBoundary"] ''
         ( test ! -e "${font_dst}" || test $(sha1sum "${font_src}"|cut -d' ' -f1 ) != $(sha1sum "${font_dst}" |cut -d' ' -f1)) && $DRY_RUN_CMD install $VERBOSE_ARG -D "${font_src}" "${font_dst}"
-	echo "${scorpio-gruvy-dotfiles}"
+	ls -a "${scorpio-gruvy-dotfiles}/.config/fastfetch"
+	ls -a "${pkgs.fastfetch}/share/fastfetch/presets/"
     '';
   };
 
