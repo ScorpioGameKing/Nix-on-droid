@@ -37,11 +37,16 @@ in
     copyFont = let
       font_src ="${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/AgaveNerdFontMono-Regular.ttf";
       font_dst = "${config.home.homeDirectory}/.termux/font.ttf";
-      in lib.hm.dag.entryAfter ["writeBoundary"] ''
+    in lib.hm.dag.entryAfter ["writeBoundary"] ''
         ( test ! -e "${font_dst}" || test $(sha1sum "${font_src}"|cut -d' ' -f1 ) != $(sha1sum "${font_dst}" |cut -d' ' -f1)) && $DRY_RUN_CMD install $VERBOSE_ARG -D "${font_src}" "${font_dst}"
-	ls -a "${scorpio-gruvy-dotfiles}/.config/fastfetch"
-	ls -a "${pkgs.fastfetch}/share/fastfetch/presets/"
     '';
+    copyFastfetch = let
+      dotFiles = "${scorpio-gruvy-dotfiles}/.config/fastfetch/config.jsonc";
+      fastDerv = "${pkgs.fastfetch}/share/fastfetch/";
+    in lib.hm.dag.entryAfter ["writeBoundary"] ''
+      ls -a "${dotFiles}"
+      ls -a "${fastDerv}"
+      '';
   };
 
   # ---------------------------
