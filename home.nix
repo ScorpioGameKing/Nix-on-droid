@@ -16,7 +16,7 @@ let
     owner = "ScorpioGameKing";
     repo = "Scorpio-Gruv-dotfiles";
     rev = "927abbcc4b4f712e65de5ebbf6a8a412be1fb068";
-    sha256 = "0smwvjm5yvrzbdg8s60m9mxhjpy9dwc9jwk9kn93liwc1b98dikg";
+    sha256 = "sha256-PvHHHNY/DllCwTajBDyXmsqSR8NNv39Y3TcsNMRo+O0=";
   };
 in
 
