@@ -69,16 +69,6 @@ in
       ff
     '';
   };
-  
-  # For some reason nix-on-droid's
-  # home-manager instance can't find
-  # fastfetch. Feels similar to the
-  # Yazi flavor issues and is just a
-  # nix-on-droid issue. From searches
-  # it appears fastfetch's declarative
-  # config was added 24.11, this is 
-  # 24.05. Instead copy the source from
-  # existing dotfile repo.
 
   # Fastfetch Settings
   xdg.configFile = {
@@ -86,8 +76,13 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/fastfetch";
       recursive = true;
     };
+    "yazi" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/yazi";
+      recursive = true;
+    };
   };
 
+  /*
   # Yazi Settings
   programs.yazi = {
     enable = true;
@@ -118,7 +113,8 @@ in
       };
     };
   };
-  
+  */
+
   # Zoxide settings
   # Currently seems to not be working
   programs.zoxide = {
