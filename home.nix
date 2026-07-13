@@ -15,8 +15,8 @@ let
   scorpio-gruv-dotfiles = pkgs.fetchFromGitHub {
     owner = "ScorpioGameKing";
     repo = "Scorpio-Gruv-dotfiles";
-    rev = "927abbcc4b4f712e65de5ebbf6a8a412be1fb068";
-    sha256 = "sha256-PvHHHNY/DllCwTajBDyXmsqSR8NNv39Y3TcsNMRo+O0=";
+    rev = "c451f1caf28d4a268af0f44a7e77e889a64dedd0";
+    sha256 = "1ba0xxd201w9yvpkwcdpmds422yz4z514q6wzxr24y70xw3sddyx";
   };
 in
 
