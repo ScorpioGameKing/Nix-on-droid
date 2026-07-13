@@ -12,7 +12,7 @@
 
 # Grab Dotfiles
 let
-  scorpio-gruvy-dotfiles = pkgs.fetchFromGitHub {
+  scorpio-gruv-dotfiles = pkgs.fetchFromGitHub {
     owner = "ScorpioGameKing";
     repo = "Scorpio-Gruv-dotfiles";
     rev = "master";
@@ -35,18 +35,11 @@ in
 
   home.activation = {
     copyFont = let
-      font_src ="${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/AgaveNerdFontMono-Regular.ttf";
-      font_dst = "${config.home.homeDirectory}/.termux/font.ttf";
-    in lib.hm.dag.entryAfter ["writeBoundary"] ''
+        font_src ="${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/AgaveNerdFontMono-Regular.ttf";
+        font_dst = "${config.home.homeDirectory}/.termux/font.ttf";
+      in lib.hm.dag.entryAfter ["writeBoundary"] ''
         ( test ! -e "${font_dst}" || test $(sha1sum "${font_src}"|cut -d' ' -f1 ) != $(sha1sum "${font_dst}" |cut -d' ' -f1)) && $DRY_RUN_CMD install $VERBOSE_ARG -D "${font_src}" "${font_dst}"
     '';
-    copyFastfetch = let
-      dotFiles = "${scorpio-gruvy-dotfiles}/.config/fastfetch/config.jsonc";
-      fastDerv = "${pkgs.fastfetch}/share/fastfetch/";
-    in lib.hm.dag.entryAfter ["writeBoundary"] ''
-      ls -a "${dotFiles}"
-      ls -a "${fastDerv}"
-      '';
   };
 
   # ---------------------------
@@ -76,7 +69,6 @@ in
       ff
     '';
   };
-
   
   # For some reason nix-on-droid's
   # home-manager instance can't find
@@ -89,6 +81,12 @@ in
   # existing dotfile repo.
 
   # Fastfetch Settings
+  xdg.configFile = {
+    "fastfetch" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/fastfetch";
+      recursive = true;
+    };
+  };
 
   # Yazi Settings
   programs.yazi = {
