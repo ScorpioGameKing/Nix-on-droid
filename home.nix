@@ -76,13 +76,8 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/fastfetch";
       recursive = true;
     };
-    "yazi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/yazi";
-      recursive = true;
-    };
   };
 
-  /*
   # Yazi Settings
   programs.yazi = {
     enable = true;
@@ -113,7 +108,6 @@ in
       };
     };
   };
-  */
 
   # Zoxide settings
   # Currently seems to not be working
