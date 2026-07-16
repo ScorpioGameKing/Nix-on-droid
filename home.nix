@@ -110,8 +110,14 @@ in
   };
 
   # Zoxide settings
-  # Currently seems to not be working
   programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    options = [
+	"--cmd cd"
+    ];
+  };
+  programs.fzf = {
     enable = true;
     enableBashIntegration = true;
   };
