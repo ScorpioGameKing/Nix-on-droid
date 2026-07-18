@@ -64,9 +64,9 @@ in
       ls = "eza -TF -L 1 -a -s type --icons=auto -lUmh --git-repos --no-permissions";
       ff = "clear && fastfetch";
       vi = "nvim";
-      lzg = "lazygit";
-      nodsw = "lzg && nix-on-droid switch --flake ~/.config/nix-on-droid/";
-      nodswc = "lzg && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      lg = "lazygit";
+      nodsw = "lg && nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      nodswc = "lg && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
       nodrl = "nix-on-droid rollback";
     };
     initExtra = ''
