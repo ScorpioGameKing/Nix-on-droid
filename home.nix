@@ -22,12 +22,16 @@ in
 
 {
   # Read the changelog before changing this value
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.11";
 
   # User Packages
   home.packages = [
     pkgs.fastfetch # Pretty System Post
     pkgs.neovim    # Better Text Editor
+    pkgs.gcc
+    pkgs.cmake
+    pkgs.tree-sitter
+    pkgs.nodejs
     pkgs.yazi      # Terminal File Browser
     pkgs.lazygit   # Git Repo Management
     pkgs.gh        # Github CLI 
@@ -61,8 +65,8 @@ in
       ff = "clear && fastfetch";
       vi = "nvim";
       lzg = "lazygit";
-      nodsw = "nix-on-droid switch --flake ~/.config/nix-on-droid/";
-      nodswc = "cd ~ && unlink .bashrc && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      nodsw = "lzg && nix-on-droid switch --flake ~/.config/nix-on-droid/";
+      nodswc = "lzg && nix-collect-garbage -d && nix-on-droid switch --flake ~/.config/nix-on-droid/";
       nodrl = "nix-on-droid rollback";
     };
     initExtra = ''
@@ -70,7 +74,7 @@ in
     '';
   };
 
-  # Fastfetch Settings
+  # Copy Settings from Dotfiles
   xdg.configFile = {
     "fastfetch" = {
       source = config.lib.file.mkOutOfStoreSymlink "${scorpio-gruv-dotfiles}/.config/fastfetch";

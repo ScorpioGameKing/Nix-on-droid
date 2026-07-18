@@ -33,7 +33,7 @@
 
   # Nix Settings
   environment.etcBackupExtension = ".bak";
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.11";
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
